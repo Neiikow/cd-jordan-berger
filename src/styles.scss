@@ -1,1 +1,135 @@
-/* You can add global styles to this file, and also import other style files */
+// Size option
+$screen-parts: 5;
+$contact-width: calc(100% / $screen-parts);
+$contact-minWidth: 250px;
+$content-width: 900px;
+// Color option
+$bg-color: scale-color(white, $lightness: -4%);
+$txt-color: scale-color(black, $lightness: 15%);
+$primary-color: orange;
+$secondary-color: sienna;
+$alert-color: rgb(199, 46, 0);
+// Global style
+
+@media screen and (max-width: 768px){
+    p, a {
+        font-size: 0.9em;
+    }
+
+    h1, h2 {
+        font-size: 1.6em;
+    }
+}
+
+@media screen and (min-width: 1024px){
+    h1, h2 {
+        font-size: 1.8em;
+    }
+}
+
+@media screen and (max-width: 425px){
+    h2 {
+        font-size: 1.3em;
+    }
+}
+
+body {
+    color: $txt-color;
+}
+
+h1, h2, p, a {
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    text-decoration: none;
+}
+
+button {
+    cursor: pointer;
+}
+
+i {
+    font-style: normal;
+}
+
+form {
+    border-top: solid scale-color(black, $lightness: 85%) 1px;
+
+    label {
+        font-weight: bold;
+        margin-bottom: 3px;
+    }
+
+    input , textarea{
+        padding: 3px;
+        width: 100%;
+        background: scale-color($primary-color, $lightness: 95%);
+        border: solid 1px $primary-color;
+
+        &:focus {
+            outline: none;
+            border: solid 1px $secondary-color;
+        }
+    }
+
+    input:-webkit-autofill,
+    input:-webkit-autofill:hover, 
+    input:-webkit-autofill:focus{
+        -webkit-text-fill-color: $txt-color;
+        box-shadow: 0 0 0px 1000px scale-color(blue, $lightness: 95%) inset;
+    }
+
+    .form-col {
+        padding: 7px;
+    }
+
+    .btn {
+        margin: auto;
+        margin-bottom: 3px;
+    }
+
+    .invalid-data {
+        color: $alert-color;
+        font-size: 12px;
+    }
+}
+
+.edit, .delete, form button, .logout {
+    &:hover {
+        box-shadow: 0 0 5px;
+    }
+    &:focus {
+        outline: none;
+    }
+    &:active {
+        background: unset;
+    }
+}
+
+.edit, .delete {
+    height: 30px;
+    width: 30px;
+    border-radius: 50%;
+    margin: 3px;
+    background: unset;
+}
+
+form button {
+    color: green;
+    border: solid green 1px;
+    box-shadow: scale-color(green, $lightness: +30%);
+}
+
+.edit {
+    color: $primary-color;
+    border: solid $primary-color 1px;
+    box-shadow: scale-color($primary-color, $lightness: +40%);
+}
+
+.delete, .logout {
+    color: $alert-color;
+    border: solid $alert-color 1px;
+    box-shadow: scale-color($alert-color, $lightness: +30%);
+}

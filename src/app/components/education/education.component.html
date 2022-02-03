@@ -1,0 +1,18 @@
+<div class="title d-flex justify-content-between">
+    <h2><i class="fas fa-graduation-cap"></i> Formation</h2>
+</div>
+<div *ngIf="educations">
+    <div class="item d-flex justify-content-between" *ngFor="let education of educations">
+        <button class="item-content" (click)="education.active=!education.active" [class.active]="education.active">
+            <div class="text-left">
+                <p class="mb-0 text-uppercase font-weight-bold">{{ education.title }}</p>
+                <p class="font-italic font-weight-light">{{ education.company }} <span>{{ education.startyear }}<span *ngIf="education.startyear != education.endyear"> - {{ education.endyear }}</span></span></p>
+                <p class="item-about" [innerHTML]="education.about"></p>
+            </div>
+        </button>
+        <div *ngIf="isAuth()" class="item-button d-flex nowrap">
+            <button class="edit" (click)="edit(education)" title="Editer"><i class="fas fa-pen"></i></button>
+            <button class="delete" (click)="delete(education)" title="Supprimer"><i class="fas fa-times"></i></button>        
+        </div>
+    </div>
+</div>

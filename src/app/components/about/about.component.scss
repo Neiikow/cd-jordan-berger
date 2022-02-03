@@ -1,0 +1,65 @@
+@import 'src/styles.scss';
+
+@media screen and (min-width: 1024px){
+    p {
+        font-size: 1.1em;
+        line-height: 25px;
+    }
+}
+@media screen and (max-width: 1024px){
+    p {
+        font-size: 1em;
+        line-height: 21px;
+    }
+}
+@media screen and (max-width: 768px){
+    p {
+        font-size: 0.9em;
+        line-height: 18px;
+    }
+}
+@media screen and (max-width: 425px){
+    p {
+        font-size: 0.9em;
+        line-height: 18px;
+    }
+    
+    h1 {
+        margin-top: 10px;
+    }
+    
+    .picture {
+        display: none;
+    }
+}
+
+.picture {
+    min-width: 200px;
+    height: 250px;
+    margin-top: auto;
+    margin-bottom: auto;
+    border: solid 1px $secondary-color;
+    overflow: hidden;
+    position: relative;
+}
+
+img {
+    width: auto;
+    height: 100%;
+    position: absolute;
+    top: -100px;
+    bottom: -100px;
+    left: -100px;
+    right: -100px;
+    margin: auto;
+}
+
+p {
+    text-align: justify;
+    font-style: italic;
+}
+
+h1 {
+    color: $secondary-color;
+    font-weight: bold;
+}

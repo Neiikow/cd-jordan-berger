@@ -1,0 +1,26 @@
+<form class="d-flex" [formGroup]="formData" (ngSubmit)="onSubmit(formData.value)">
+    <div class="form-col d-flex align-items-start flex-column">
+        <label for="title">Compétence</label>
+        <div *ngIf="submitted && f.title.errors" class="invalid-data">
+            <div *ngIf="f.title.errors.required">Champ requis</div>
+            <div *ngIf="f.title.errors.maxlength">Trop long</div>
+        </div>
+        <input id="title" type="text" formControlName="title" [ngClass]="{'is-invalid': submitted && f.title.errors}">
+
+        <label for="icone">Icône</label>
+        <div *ngIf="submitted && f.icone.errors" class="invalid-data">
+            <div *ngIf="f.icone.errors.required">Champ requis</div>
+        </div>
+        <input class="mb-2" id="icone" type="text" formControlName="icone" [ngClass]="{'is-invalid': submitted && f.icone.errors}">
+
+        <button class="btn" type="submit">Ajouter</button>
+    </div>
+    <div class="form-col">
+        <label for="details">Détails</label>
+        <div *ngIf="submitted && f.details.errors" class="invalid-data">
+            <div *ngIf="f.details.errors.required">Champ requis</div>
+            <div *ngIf="f.details.errors.maxlength">Trop long</div>
+        </div>
+        <textarea id="details" rows="4" formControlName="details" [ngClass]="{'is-invalid': submitted && f.details.errors}"></textarea>
+    </div>
+</form>

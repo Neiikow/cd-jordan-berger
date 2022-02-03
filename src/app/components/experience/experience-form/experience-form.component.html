@@ -1,0 +1,40 @@
+<form class="d-flex" [formGroup]="formData" (ngSubmit)="onSubmit(formData.value)">
+    <div class="form-col ml-auto d-flex flex-column">
+        <label for="function">Fonction</label>
+        <div *ngIf="submitted && f.function.errors" class="invalid-data">
+            <div *ngIf="f.function.errors.required">Champ requis</div>
+            <div *ngIf="f.function.errors.maxlength">Trop long</div>
+        </div>
+        <input type="text" id="function" formControlName="function" [ngClass]="{'is-invalid': submitted && f.function.errors}">
+
+        <label for="company">Entreprise</label>
+        <div *ngIf="submitted && f.company.errors" class="invalid-data">
+            <div *ngIf="f.company.errors.required">Champ requis</div>
+            <div *ngIf="f.company.errors.maxlength">Trop long</div>
+        </div>
+        <input type="text" id="company" formControlName="company" [ngClass]="{'is-invalid': submitted && f.company.errors}">
+
+        <label for="startyear">Début</label>
+        <div *ngIf="submitted && f.startyear.errors" class="invalid-data">
+            <div *ngIf="f.startyear.errors.required">Champ requis</div>
+        </div>
+        <input type="text" id="startyear" formControlName="startyear" [ngClass]="{'is-invalid': submitted && f.startyear.errors}">
+
+        <label for="endyear">Fin</label>
+        <div *ngIf="submitted && f.endyear.errors" class="invalid-data">
+            <div *ngIf="f.endyear.errors.required">Champ requis</div>
+        </div>
+        <input type="text" id="endyear" formControlName="endyear" [ngClass]="{'is-invalid': submitted && f.endyear.errors}">
+
+    </div>
+    <div class="form-col mr-auto d-flex align-items-start flex-column">
+        <label for="about">Détails</label>
+        <div *ngIf="submitted && f.about.errors" class="invalid-data">
+            <div *ngIf="f.about.errors.required">Champ requis</div>
+            <div *ngIf="f.about.errors.maxlength">Trop long</div>
+        </div>
+        <textarea class="mb-2" id="about" rows="4" formControlName="about" [ngClass]="{'is-invalid': submitted && f.about.errors}"></textarea>
+
+        <button class="btn" type="submit">Ajouter</button>
+    </div>
+</form>

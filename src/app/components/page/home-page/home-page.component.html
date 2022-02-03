@@ -1,0 +1,27 @@
+<p class="ml-4 font-italic pt-2">Détails disponibles sur certains éléments</p>
+<div class="d-flex flex-wrap">
+    <section class="col">
+        <app-skill (emitEdit)="editSkill($event)"></app-skill>
+        <app-skill-form *ngIf="isAuth()" (refreshSkill)="refreshSkill()"></app-skill-form>
+    </section>
+    <section class="col">
+        <app-language (emitEdit)="editLanguage($event)"></app-language>
+        <app-language-form *ngIf="isAuth()" (refreshLanguage)="refreshLanguage()"></app-language-form>
+    </section>
+    <section>
+        <app-experience (emitEdit)="editExperience($event)"></app-experience>
+        <app-experience-form *ngIf="isAuth()" (refreshExperience)="refreshExperience()"></app-experience-form>
+    </section>
+    <section>
+        <app-education (emitEdit)="editEducation($event)"></app-education>
+        <app-education-form *ngIf="isAuth()" (refreshEducation)="refreshEducation()"></app-education-form>
+    </section>
+    <section>
+        <app-interest (emitEdit)="editInterest($event)"></app-interest>
+        <app-interest-form *ngIf="isAuth()" (refreshInterest)="refreshInterest()"></app-interest-form>
+    </section>
+    <section>
+        <app-project (emitEdit)="editProject($event)"></app-project>
+        <app-project-form *ngIf="isAuth()" (refreshProject)="refreshProject()"></app-project-form>
+    </section>
+</div>

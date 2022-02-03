@@ -1,0 +1,90 @@
+@import 'src/styles.scss';
+
+@media screen and (max-width: 425px) {
+    .item-content {
+        margin-left: 15px;
+    }
+
+    .item-content {
+        margin-left: 5px;
+    }
+}
+@media screen and (min-width: 426px) {
+    .item-about {
+        margin-left: 40px;
+    }
+
+    .item-content {
+        margin-left: 20px;
+    }
+}
+
+section {
+    width: 100%;
+    margin: 5px;
+    margin-bottom: 20px;
+    padding: 0;
+    background: $bg-color;
+    box-shadow: 0 0 6px black;
+}
+
+h2 {
+    color: $secondary-color;
+    padding-left: 10px;
+}
+
+.title {
+    padding: 10px;
+    background: scale-color($primary-color, $lightness: 90%);
+}
+
+.item {
+    color: $txt-color;
+    border-top: solid scale-color(black, $lightness: 85%) 1px;
+
+    .item-content, .item-button {
+        padding: 10px;
+    }
+
+    .item-icone {
+        color: $primary-color;
+        font-size: 1.5em;
+        width: 30px;
+        text-align: center;
+    }
+
+    .item-content {
+        border: none;
+        width: 100%;
+        background-color: transparentize($color: #000000, $amount: 1);
+
+        &:focus {
+            outline: none;
+        }
+    }
+
+    .item-about {
+        font-size: .8em;
+        padding-left: 8px;
+        border-left: solid $primary-color 1px;
+        overflow: hidden;
+        max-height: 0;
+        transition: max-height .3s;
+        transition-timing-function: linear;
+    }
+
+    &:hover {
+        background: scale-color($primary-color, $lightness: 95%);
+        border-left: solid 2px $primary-color;
+        border-top: solid 1px $primary-color;
+        margin-left: -2px;
+    }
+}
+
+.active {
+    .item-about {
+        max-height: 200px;
+        transition: max-height 0.3s;
+        transition-timing-function: linear;
+    }
+}

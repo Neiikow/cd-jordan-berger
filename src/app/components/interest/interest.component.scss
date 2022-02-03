@@ -1,0 +1,33 @@
+@import '../page/home-page/home-page.component.scss';
+
+@media screen and (max-width: 425px) {
+    p {
+        display: none;
+    }
+}
+
+.item {
+    &:hover {
+        background: none;
+        border: none;
+        border-top: solid scale-color(black, $lightness: 85%) 1px;
+        margin-left: 0px;
+    }
+
+    .item-content {
+        padding: 10px;
+        margin-left: 0px;
+
+        .item-icone {
+            font-size: 1.8em;
+            width: 100%;
+            text-align: center;
+        }
+    }
+
+    .item-about {
+        margin-left: 0px;
+        padding-left: 0px;
+        border-left: 0px;
+    }
+}

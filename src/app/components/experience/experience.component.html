@@ -1,0 +1,18 @@
+<div class="title d-flex justify-content-between">
+    <h2><i class="fas fa-user-tie"></i> Expérience</h2>
+</div>
+<div *ngIf="experiences">
+    <div class="item d-flex justify-content-between" *ngFor="let experience of experiences">
+        <button class="item-content" (click)="experience.active=!experience.active" [class.active]="experience.active">
+            <div class="text-left">
+                <p class="mb-0 text-uppercase font-weight-bold">{{ experience.function }}</p>
+                <p class="font-italic font-weight-light">{{ experience.company }} <span>{{ experience.startyear }}<span *ngIf="experience.startyear != experience.endyear"> - {{ experience.endyear }}</span></span></p>
+                <p class="item-about" [innerHTML]="experience.about"></p>
+            </div>
+        </button>
+        <div *ngIf="isAuth()" class="item-button d-flex nowrap">
+            <button class="edit" (click)="edit(experience)" title="Editer"><i class="fas fa-pen"></i></button>
+            <button class="delete" (click)="delete(experience)" title="Supprimer"><i class="fas fa-times"></i></button>        
+        </div>
+    </div>
+</div>

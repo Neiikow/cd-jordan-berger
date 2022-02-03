@@ -1,0 +1,26 @@
+<div class="title d-flex justify-content-between">
+  <h2><i class="fas fa-folder"></i> Projets</h2>
+</div>
+<div class="item-grid" *ngIf="projects">
+  <div class="item d-flex flex-wrap" *ngFor="let project of projects">
+    <a [href]=[project.url] target="blank" class="text-left item-card" [style.background-image]="'url('+project.picture+')'">
+      <p class="card-category font-italic pb-2"
+        [ngClass]="{
+          'project-training': project.category == 'Formation',
+          'project-personnal': project.category == 'Personnel',
+          'project-professional': project.category == 'Professionnel'
+        }">
+        {{ project.category }}
+      </p>
+      <div class="item-content">
+        <p class="text-uppercase font-weight-bold pb-2">{{ project.title }}</p>
+        <p>{{ project.details }}</p>
+      </div>
+    </a>
+    <div *ngIf="isAuth()" class="d-flex nowrap m-auto">
+      <button class="edit" (click)="edit(project)" title="Editer"><i class="fas fa-pen"></i></button>
+      <button class="delete" (click)="delete(project)" title="Supprimer"><i class="fas fa-times"></i></button>
+    </div>
+  </div>
+</div>
+  

@@ -1,0 +1,9 @@
+@import 'src/styles.scss';
+
+form {
+    border-top: 0px;
+
+    .invalid-data {
+        color: $primary-color;
+    }
+}

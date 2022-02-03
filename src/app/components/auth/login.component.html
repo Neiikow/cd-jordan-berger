@@ -1,0 +1,20 @@
+<form class="d-flex flex-column m-auto" [formGroup]="formData" (ngSubmit)="onSubmit(formData)">
+    <div class="form-col d-flex flex-column">
+        <label for="email-log">Email</label>
+        <div *ngIf="submitted && f.email.errors" class="invalid-data">
+            <div *ngIf="f.email.errors.required">Champ requis</div>
+        </div>
+        <input id="email-log" type="email" formControlName="email" [ngClass]="{'is-invalid': submitted && f.email.errors}">
+    
+        <label for="password">Mot de passe</label>
+        <div *ngIf="submitted && f.password.errors" class="invalid-data">
+            <div *ngIf="f.password.errors.required">Champ requis</div>
+        </div>
+        <input id="password" type="password" formControlName="password" [ngClass]="{'is-invalid': submitted && f.password.errors}">
+        <p *ngIf="submitted && loginError" class="invalid-data">Email ou mot de passe incorrect</p>
+    </div>
+    <div class="form-col d-flex m-auto">
+        <button class="mr-2" type="submit">Se connecter</button>
+        <button class="logout" type="button" (click)="logout()">Déconnexion</button>
+    </div>
+</form>

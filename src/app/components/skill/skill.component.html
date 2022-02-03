@@ -1,0 +1,20 @@
+<div class="title d-flex justify-content-between">
+    <h2><i class="fas fa-code"></i> Compétence</h2>
+</div>
+<div *ngIf="skills">
+    <div class="item d-flex justify-content-between" *ngFor="let skill of skills">
+        <button class="item-content" (click)="skill.active=!skill.active" [class.active]="skill.active">
+            <div class="d-flex align-items-center">
+                <p class="item-icone mr-2" [innerHTML]="skill.icone"></p>
+                <p class="text-uppercase font-weight-bold">{{ skill.title }}</p>
+            </div>
+            <div class="text-left">
+                <p class="item-about" [innerHTML]="skill.details"></p>
+            </div>
+        </button>
+        <div *ngIf="isAuth()" class="item-button d-flex nowrap">
+            <button class="edit" (click)="edit(skill)" title="Editer"><i class="fas fa-pen"></i></button>
+            <button class="delete" (click)="delete(skill)" title="Supprimer"><i class="fas fa-times"></i></button>
+        </div>
+    </div>
+</div>
